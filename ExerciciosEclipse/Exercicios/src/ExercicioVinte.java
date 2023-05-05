@@ -9,7 +9,7 @@ public class ExercicioVinte {
 		int totalCarros2000 = 0;
 		int total = 0;
 		
-		float vendaCarro = 0;
+		float desconto = 0;
 		float valorCarro;
 		
 		char desejaContinuar = 'S';
@@ -23,22 +23,25 @@ public class ExercicioVinte {
 			valorCarro = leitor.nextFloat();
 			
 			if(anoCarro <= 2000 ) {
-				vendaCarro = valorCarro * 12 / 100;
+				desconto = valorCarro * 12 / 100;
 				totalCarros2000++;
-				total++;
-				System.out.println("O valor do carro com desconto de 12% é R$" + (valorCarro - vendaCarro));
+				System.out.println("O valor de desconto foi R$" + desconto);
+				System.out.println("Valor a ser pago R$: " + (valorCarro - desconto));
 				
-			} if(anoCarro > 2000) {
-				vendaCarro = valorCarro * 7 /100;
-				total++;
-				System.out.println("O valor do carro com desconto de 7% é R$" + (valorCarro - vendaCarro));
+			} else  {
+				desconto = valorCarro * 7 /100;
+				
+				System.out.println("O valor de desconto foi R$" + desconto);
+				System.out.println("Valor a ser pago R$: " + (valorCarro - desconto));
 				
 			}
+			total++;
 			System.out.println("------------------------------");
 			System.out.println("Deseja continua? S = Sim | N = Não");
 			desejaContinuar = leitor.next().charAt(0);
 		}
-
+		System.out.println("Total de carro ate 2000: " + totalCarros2000);
+		System.out.println("Total de carro: " + total);
 	}
 
 }
